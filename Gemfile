@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'berkshelf', '~> 5.0.0'
-gem 'rake'
+gem 'rake', '~> 10.4.2'
 
 group :integration do
   gem 'kitchen-vagrant'

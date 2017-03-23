@@ -7,4 +7,4 @@ rvm:
 bundler_args: --without='vagrant'
 
 script:
-    - bundle exec rake integration:vagrant
+    - bundle exec rake rubocop

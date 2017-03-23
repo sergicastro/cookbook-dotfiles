@@ -51,4 +51,12 @@ namespace :integration do
   # end
 end
 
-task default: %w(integration:vagrant)
+desc 'Run Ruby style checks'
+task :rubocop do
+  require 'rubocop/rake_task'
+  RuboCop::RakeTask.new do |config|
+    config.options = %w(-DSE)
+  end
+end
+
+task default: %w(rubocop integration:vagrant)
