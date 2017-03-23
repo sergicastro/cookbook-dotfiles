@@ -141,9 +141,9 @@ DEPENDENCIES
   berkshelf (~> 5.0.0)
   hashie (~> 3.5.3)
   kitchen-vagrant
-  rake
+  rake (~> 10.4.2)
   rubocop (~> 0.47.1)
   test-kitchen
 
 BUNDLED WITH
-   1.14.4
+   1.14.6
