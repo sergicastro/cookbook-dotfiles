@@ -1,12 +1,14 @@
-dotfiles_path = ENV['dotfiles_path']
-home = ENV['HOME']
+env_home = node['environment']['home']
+env_dotfiles = node['environment']['dotfiles']
 
-link home + '/.gitconfig' do
-  to dotfiles_path + '/git/.gitconfig'
+link 'HOME/.gitconfig' do
+  target_file env_home + '/.gitconfig'
+  to env_dotfiles + '/git/.gitconfig'
   link_type :symbolic
 end
 
-link home + '/.gittemplate' do
-  to dotfiles_path + '/git/templatedir/'
+link 'HOME/.gittemplate' do
+  target_file env_home + '/.gittemplate'
+  to env_dotfiles + '/git/templatedir/'
   link_type :symbolic
 end

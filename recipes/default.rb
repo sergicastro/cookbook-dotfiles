@@ -9,3 +9,4 @@
 include_recipe 'git::default'
 include_recipe 'dotfiles::clone_dotfiles'
 include_recipe 'dotfiles::git_config'
+include_recipe 'dotfiles::scripts_config'

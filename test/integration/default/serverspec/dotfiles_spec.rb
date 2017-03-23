@@ -18,3 +18,10 @@ describe 'git configured' do
       be_linked_to('/home/vagrant/.dotfiles/git/templatedir/')
   end
 end
+
+describe 'scripts folder configured' do
+  it 'scripts link to folder exists' do
+    expect(file('/home/vagrant/scripts')).to \
+      be_linked_to('/home/vagrant/.dotfiles/scripts/')
+  end
+end
