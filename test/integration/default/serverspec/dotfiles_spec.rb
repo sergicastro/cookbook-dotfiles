@@ -25,3 +25,16 @@ describe 'scripts folder configured' do
       be_linked_to('/home/vagrant/.dotfiles/scripts/')
   end
 end
+
+describe 'vim is installed' do
+  it 'vim is installed' do
+    expect(package('vim')).to be_installed
+  end
+
+  it 'vim is configured' do
+    expect(file('/home/vagrant/.vim')).to \
+      be_linked_to('/home/vagrant/.dotfiles/vim/.vim/')
+    expect(file('/home/vagrant/.vimrc')).to \
+      be_linked_to('/home/vagrant/.dotfiles/vim/.vimrc')
+  end
+end
