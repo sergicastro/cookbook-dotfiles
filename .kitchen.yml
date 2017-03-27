@@ -7,7 +7,8 @@ provisioner:
 
 platforms:
   - name: ubuntu-16.10
-  - name: centos-7
+  # - name: centos-7.1
+  # - name: fedora-25
 
 suites:
   - name: default

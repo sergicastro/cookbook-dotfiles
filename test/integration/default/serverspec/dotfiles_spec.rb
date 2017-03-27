@@ -33,8 +33,12 @@ describe 'vim is installed' do
 
   it 'vim is configured' do
     expect(file('/home/vagrant/.vim')).to \
-      be_linked_to('/home/vagrant/.dotfiles/vim/.vim/')
+      be_linked_to('/home/vagrant/.dotfiles/vim/.vim')
     expect(file('/home/vagrant/.vimrc')).to \
       be_linked_to('/home/vagrant/.dotfiles/vim/.vimrc')
+  end
+
+  it 'ctags is intalled' do
+    expect(package('exuberant-ctags')).to be_installed
   end
 end

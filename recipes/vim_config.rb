@@ -12,3 +12,14 @@ link 'HOME/.vimrc' do
   to env_dotfiles + '/vim/.vimrc'
   link_type :symbolic
 end
+
+case node['platform_family']
+when 'debian'
+  package 'exuberant-ctags' do
+    action :install
+  end
+when 'fedora'
+  package 'ctags' do
+    :install
+  end
+end
