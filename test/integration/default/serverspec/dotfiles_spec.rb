@@ -79,4 +79,8 @@ describe 'rbenv installed' do
   it 'rbenv cloned' do
     expect(file('/home/vagrant/.rbenv')).to exist
   end
+
+  it 'ruby build plugin clone' do
+    expect(file('/home/vagrant/.rbenv/plugins/ruby-build')).to exist
+  end
 end
