@@ -4,6 +4,7 @@ cache: bundler
 rvm:
   - 2.2.2
 
+before_install: gem uninstall bundler && gem install bundler -v 1.14.6
 bundler_args: --without integration
 
 script:
