@@ -42,3 +42,28 @@ describe 'vim is installed' do
     expect(package('exuberant-ctags')).to be_installed
   end
 end
+
+describe 'zsh is installed' do
+  it 'zsh is installed' do
+    expect(package('zsh')).to be_installed
+  end
+
+  it 'zsh dotfile linked' do
+    expect(file('/home/vagrant/.zshrc')).to \
+      be_linked_to('/home/vagrant/.dotfiles/zsh/.zshrc')
+  end
+
+  it 'oh-my-zsh cloned' do
+    expect(file('/home/vagrant/.oh-my-zsh')).to exist
+  end
+
+  it 'scastro theme linked' do
+    expect(file('/home/vagrant/.oh-my-zsh/themes/scastro.zsh-theme')).to \
+      be_linked_to('/home/vagrant/.dotfiles/zsh/themes/scastro.zsh-theme')
+  end
+
+  it 'use zsh as default shell' do
+    expect(command('getent passwd $LOGNAME | cut -d: -f7').stdout).to \
+      eq("/bin/zsh\n")
+  end
+end
