@@ -67,3 +67,15 @@ describe 'zsh is installed' do
       eq("/bin/zsh\n")
   end
 end
+
+describe 'jenv installed' do
+  it 'jenv cloned' do
+    expect(file('/home/vagrant/.jenv')).to exist
+  end
+end
+
+describe 'rbenv installed' do
+  it 'rbenv cloned' do
+    expect(file('/home/vagrant/.rbenv')).to exist
+  end
+end
